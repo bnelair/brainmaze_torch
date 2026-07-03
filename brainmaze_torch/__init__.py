@@ -1,2 +1,8 @@
-from brainmaze_torch._version import __version__
+from importlib.metadata import version, PackageNotFoundError
+
+try:
+    __version__ = version("brainmaze-torch")
+except PackageNotFoundError:
+    __version__ = "0.0.0"
+
 __all__ = ['__version__']
